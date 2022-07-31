@@ -1,10 +1,10 @@
 {
   "name": "arrayutils",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "provide sorting to array.",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest src/tests"
   },
   "repository": {
     "type": "git",
