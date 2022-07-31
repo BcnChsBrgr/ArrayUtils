@@ -8,6 +8,13 @@ export class ArrayUtils extends Array<any> implements UtilsArrayInterface {
         this.push(...v);
     }
 
+    getNode(element: any, name?: string): any {
+        if (name === undefined) {
+            return element;
+        }
+        return element[name] === undefined ? element.get(name) : element[name];
+    }
+
     bobbleSort(
         sort: string = "asc",
         name?: string
@@ -19,18 +26,9 @@ export class ArrayUtils extends Array<any> implements UtilsArrayInterface {
                 if (name === undefined && typeof _temp[j] === "object") {
                     throw new Error("Missing key for the object.");
                 }
-                let currentNode =
-                        name === undefined
-                            ? _temp[j]
-                            : _temp[j][name] === undefined
-                            ? _temp[j].get(name)
-                            : _temp[j][name],
-                    nextNode =
-                        name === undefined
-                            ? _temp[j + 1]
-                            : _temp[j + 1][name] === undefined
-                            ? _temp[j + 1].get(name)
-                            : _temp[j + 1][name];
+                let currentNode = this.getNode(_temp[j], name),
+                    nextNode = this.getNode(_temp[j + 1], name);
+
                 let swap =
                     sort === "asc"
                         ? currentNode > nextNode
