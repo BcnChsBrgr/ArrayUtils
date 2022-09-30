@@ -15,5 +15,4 @@ cache:
 script:
     - npm install -g typescript
     - npm run build
-    - npm run lint
     - npm run test
