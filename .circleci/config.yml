@@ -24,12 +24,13 @@ jobs:
             - image: "cimg/base:stable"
         resource_class: small
         steps:
+            - checkout
             - node/install:
                   install-yarn: false
                   node-version: "16"
             - run:
                   name: get version
-                  command: node --version
+                  command: ls -al && node --version
             - run:
                   name: build tsc
                   command: npm install -g typescript && npm run build
