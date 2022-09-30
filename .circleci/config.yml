@@ -1,0 +1,50 @@
+version: 2.1
+orbs:
+    node: circleci/node@5.0.3
+jobs:
+    greeting:
+        docker:
+            - image: "cimg/base:stable"
+        resource_class: small
+        steps:
+            - run:
+                  name: greeting
+                  command: echo 'hello world'
+    Fetch-Code:
+        docker:
+            - image: "cimg/base:stable"
+        resource_class: small
+        steps:
+            - checkout
+            - run:
+                  name: list all my file
+                  command: ls -al
+    install-node-example:
+        docker:
+            - image: "cimg/base:stable"
+        resource_class: small
+        steps:
+            - node/install:
+                  install-yarn: false
+                  node-version: "14.13"
+            - run:
+                  name: get version
+                  command: node --version
+            - run:
+                  name: build tsc
+                  command: tsc build
+workflows:
+    test_my_app:
+        jobs:
+            - greeting
+            - Fetch-Code:
+                  requires:
+                      - greeting
+            - install-node-example:
+                  requires:
+                      - Fetch-Code
+            - node/test:
+                  requires:
+                      - install-node-example
+                  test-results-for: jest
+                  test-results-path: junit.xml
