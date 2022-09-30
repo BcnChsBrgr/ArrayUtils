@@ -32,7 +32,7 @@ jobs:
                   command: node --version
             - run:
                   name: build tsc
-                  command: npm install && npm install -g typescript && tsc -b
+                  command: npm install -g typescript && npm run build
 workflows:
     ArrayUtils:
         jobs:
