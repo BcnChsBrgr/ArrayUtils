@@ -32,7 +32,7 @@ jobs:
                   command: node --version
             - run:
                   name: build tsc
-                  command: npm install && tsc build
+                  command: npm install && tsc -b
 workflows:
     test_my_app:
         jobs:
