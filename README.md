@@ -8,9 +8,7 @@
 </p>
 
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/BcnChsBrgr/ArrayUtils.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/BcnChsBrgr/ArrayUtils/alerts/)
-
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/BcnChsBrgr/ArrayUtils.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/BcnChsBrgr/ArrayUtils/context:javascript)
-
 [![Build Status](https://app.travis-ci.com/BcnChsBrgr/ArrayUtils.svg?branch=main)](https://app.travis-ci.com/BcnChsBrgr/ArrayUtils)
 
 This is the array utils that help sorting.
