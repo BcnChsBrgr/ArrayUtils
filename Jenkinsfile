@@ -6,7 +6,6 @@ pipeline {
         echo 'step 1 - git pull'
         sh '''ls
 pwd'''
-        sleep 1
         sh '''touch ~/.bashrc
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 nvm --version
