@@ -4,6 +4,8 @@ pipeline {
     stage('build') {
       steps {
         echo 'step 1 - git pull'
+        sh '''ls
+pwd'''
       }
     }
 
